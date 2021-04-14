@@ -25,15 +25,23 @@ namespace Main.SystemAdmin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadGridView();
-            this.RestoreParameters();
+            if (!IsPostBack)
+            {
+                this.LoadGridView();
+                this.RestoreParameters();
+            }
+
         }
 
         private void RestoreParameters()
         {
             string name = Request.QueryString["name"];
+            string levelText = Request.QueryString["level"];
             if (!string.IsNullOrEmpty(name))
                 this.txtName.Text = name;
+
+            if (!string.IsNullOrEmpty(levelText))
+                this.rdblLevel.Text = levelText;
         }
 
         private string GetQueryString(bool includePage, int? pageIndex)

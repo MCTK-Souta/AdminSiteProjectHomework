@@ -17,9 +17,13 @@ namespace Main.SystemAdmin
 
         protected void btn1_Click(object sender, EventArgs e)
         {
-            if (!LoginHelper.TryLogin(this.txtPWD.Text, this.txtAccount.Text))
+            if (LoginHelper.TryLogin(this.txtAccount.Text,this.txtPWD.Text ))
             {
                 Response.Redirect("~/SystemAdmin/MainPage.aspx");
+            }
+            else
+            {
+                this.Literal1.Text = "帳號或密碼錯誤";
             }
         }
     }

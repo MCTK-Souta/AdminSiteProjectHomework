@@ -14,7 +14,8 @@
             <tr><td>密碼</td><td><asp:TextBox runat="server" ID="txtPWD" ></asp:TextBox></td></tr>
         </table>
 
-        <asp:Button runat="server" ID="btn1" Text="Login" />
+        <asp:Button runat="server" ID="btn1" Text="Login" OnClick="btn1_Click" /><br />
+        <span style="color:red;"><asp:Literal ID="Literal1" runat="server" ></asp:Literal></span>
     </form>
 </body>
 </html>
